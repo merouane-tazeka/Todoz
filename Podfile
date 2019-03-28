@@ -7,5 +7,6 @@ use_frameworks!
   # Pods for Todoz
 
 pod 'RealmSwift'
+pod 'SwipeCellKit'
 
 end
