@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1D7296224E42F600B29D8C /* SwipeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1D7295224E42F600B29D8C /* SwipeCellViewController.swift */; };
 		0E4A3581224BD3740006B519 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A3580224BD3740006B519 /* Item.swift */; };
 		0E4A3583224BD37F0006B519 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A3582224BD37F0006B519 /* Category.swift */; };
 		0EBC0CB0224A887800F745A6 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC0CAF224A887800F745A6 /* CategoryViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1D7295224E42F600B29D8C /* SwipeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellViewController.swift; sourceTree = "<group>"; };
 		0E4A3580224BD3740006B519 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0E4A3582224BD37F0006B519 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0EBC0CAF224A887800F745A6 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				0EBC0CAF224A887800F745A6 /* CategoryViewController.swift */,
 				0EF144D622444936006DF0D9 /* TodoListViewController.swift */,
+				0E1D7295224E42F600B29D8C /* SwipeCellViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				0E4A3581224BD3740006B519 /* Item.swift in Sources */,
 				0EBC0CB0224A887800F745A6 /* CategoryViewController.swift in Sources */,
 				0EF144D722444936006DF0D9 /* TodoListViewController.swift in Sources */,
+				0E1D7296224E42F600B29D8C /* SwipeCellViewController.swift in Sources */,
 				0EF144D522444936006DF0D9 /* AppDelegate.swift in Sources */,
 				0E4A3583224BD37F0006B519 /* Category.swift in Sources */,
 			);
