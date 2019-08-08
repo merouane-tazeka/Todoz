@@ -22,6 +22,10 @@ class CategoryViewController: SwipeCellViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+    }
+    
     //MARK: - TableView Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Categories?.count ?? 1
