@@ -26,8 +26,6 @@ class TodoListViewController: SwipeCellViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +39,7 @@ class TodoListViewController: SwipeCellViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let originalHexCode = "16B5CC"
+        let originalHexCode = "18D8F4"
         updateNavigationBar(withHexCode: originalHexCode)
         
     }
@@ -118,24 +116,26 @@ class TodoListViewController: SwipeCellViewController {
         let alert = UIAlertController(title: "Add a new Todo", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add item", style: .default) { (action) in
-            
-            if let currentCategory = self.selectedCategory {
-                do {
-                    try self.realm.write {
-                        let newItem = Item()
-                        newItem.title = textField.text!
-                        newItem.dateCreation = Date()
-                        currentCategory.items.append(newItem)
+            if textField.text != "" {
+                if let currentCategory = self.selectedCategory {
+                    do {
+                        try self.realm.write {
+                            let newItem = Item()
+                            newItem.title = textField.text!
+                            newItem.dateCreation = Date()
+                            currentCategory.items.append(newItem)
+                        }
+                    } catch {
+                        print("Error saving new item: \(error)")
                     }
-                } catch {
-                    print("Error saving new item: \(error)")
+                    
+                    self.tableView.reloadData()
                 }
-                
-                self.tableView.reloadData()
-            }
-            
-            
-            
+            } else {
+                let noTextAlert = UIAlertController(title: "No text entered", message: "Please enter a Todo name", preferredStyle: .alert)
+                noTextAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(noTextAlert, animated: true)
+            }  
         }
         
         

@@ -23,8 +23,8 @@ class CategoryViewController: SwipeCellViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
-        tableView.reloadData()
+        guard let navigationBarColor = UIColor(hexString: "18D8F4") else {return}
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : ContrastColorOf(navigationBarColor, returnFlat: true)]
     }
     
     //MARK: - TableView Datasource Methods
@@ -35,7 +35,7 @@ class CategoryViewController: SwipeCellViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        let color = Categories?[indexPath.row].color ?? "16B5CC"
+        let color = Categories?[indexPath.row].color ?? "18D8F4"
         
         if let category = Categories?[indexPath.row] {
             cell.textLabel?.text = category.name
@@ -53,6 +53,7 @@ class CategoryViewController: SwipeCellViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -106,18 +107,26 @@ class CategoryViewController: SwipeCellViewController {
         
         let alert = UIAlertController(title: "Add new category", message: "Enter name of the new category", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
-            let newCategory = Category()
-            newCategory.name = textField.text!
-            newCategory.color = UIColor.randomFlat.hexValue()
-
-            self.save(category: newCategory)
+            if textField.text != "" {
+                let newCategory = Category()
+                newCategory.name = textField.text!
+                newCategory.color = UIColor.randomFlat.hexValue()
+                
+                self.save(category: newCategory)
+            } else {
+                let noTextAlert = UIAlertController(title: "No text entered", message: "Please enter a category name", preferredStyle: .alert)
+                noTextAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(noTextAlert, animated: true)
+            }
         }
         
         alert.addTextField { (alertTextField) in
             textField = alertTextField
             alertTextField.placeholder = "Create a new category"
         }
+        
         alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(alert, animated: true, completion: nil)
     }
