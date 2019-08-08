@@ -26,6 +26,8 @@ class TodoListViewController: SwipeCellViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +41,7 @@ class TodoListViewController: SwipeCellViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let originalHexCode = "18D8F4"
+        let originalHexCode = "16B5CC"
         updateNavigationBar(withHexCode: originalHexCode)
         
     }
@@ -132,7 +134,7 @@ class TodoListViewController: SwipeCellViewController {
                     self.tableView.reloadData()
                 }
             } else {
-                let noTextAlert = UIAlertController(title: "No text entered", message: "Please enter a Todo name", preferredStyle: .alert)
+                let noTextAlert = UIAlertController(title: "No text entered", message: "Please enter a category name", preferredStyle: .alert)
                 noTextAlert.addAction(UIAlertAction(title: "OK", style: .cancel))
                 self.present(noTextAlert, animated: true)
             }  
