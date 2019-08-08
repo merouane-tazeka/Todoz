@@ -24,6 +24,7 @@ class CategoryViewController: SwipeCellViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black]
+        tableView.reloadData()
     }
     
     //MARK: - TableView Datasource Methods
