@@ -11,6 +11,9 @@ Project is created using:
 - Swift 5
 - Chameleon color Framework
 - Realm Data Framework
+
+## Design Pattern
+Model-View-Controller (MVC)
 	
 ## Setup
 You will need a Mac running Xcode to run this application on your device or your simulator.
