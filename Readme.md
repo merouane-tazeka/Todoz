@@ -3,10 +3,10 @@
 ![](./Images/Screenshots.png)
 
 # Table of Contents
-* I	General info
-* II 	Technologies
-* III	Setup
-* IV	Architecture
+* I.	General info
+* II. 	Technologies
+* III.	Setup
+* IV.	Architecture
 
 ## I. General info
 This project is a simple To-Do application for iOS, where you can organise your different tasks in multiple To-Do lists and different categories.  
