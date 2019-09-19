@@ -1,6 +1,6 @@
 # Todoz
 
-
+![](./Images/Screenshots.png)
 
 # Table of Contents
 * I	General info
@@ -28,16 +28,16 @@ You will need a Mac running Xcode to run this application on your device or your
 ## Design Pattern
 Model-View-Controller (MVC)
 
-### IV.I Data Model
+### IV.I. Data Model
 * Creation of two Swift files that contains the data model of Categories and Items.
 * The relationship between Categories and Items if made using RealmSwift
 
-### IV.II Views
+### IV.II. Views
 The views are created in the Main.storyboard file. it was used to:
 * Create a TableView
 * Embed the view in a Navigation Controller
 * Create a Segue to another TableView
 
-### IV.III Controllers
+### IV.III. Controllers
 * A SwipeCellKit Cocoapod has been added to this application to add the option to delete a tableview cell by swiping entirely a cell to the left. To make this functionality available on the whole application, a main controller has been created "**SwipeCellViewController**".
-* Two controllers have been created also (for Categories Tableview and Items Tableview) that inherits from "SwipeCellViewController" Class.
+* Two controllers have been created (**CategoryViewController** and **TodoListViewController**) that inherits from "**SwipeCellViewController**" Class.
