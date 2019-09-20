@@ -9,7 +9,7 @@
 * IV.	Architecture
 
 ## I. General info
-This project is a simple To-Do application for iOS, where you can organise your different tasks in multiple To-Do lists and different categories.  
+This project is a simple To-Do application for iOS, where you can organise your different tasks in multiple To-Do lists and categories.  
 	
 ## II. Technologies
 Project is created using:
